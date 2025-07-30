@@ -13,11 +13,19 @@ import java.util.List;
 @Table(name="product")
 public class Product {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+
+    @Column(name="product_name")
     private String productName;
+
     private String description;
+
+    @Column(name="unit_price")
     private Integer unitPrice;
+
+    @Column(name="quantity_available")
     private Integer quantityAvailable;
 
     @JsonIgnore

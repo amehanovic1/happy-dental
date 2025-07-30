@@ -15,13 +15,19 @@ import java.util.List;
 @NoArgsConstructor
 public class User {
     @Id
-//    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "role", columnDefinition = "varchar(20)")
     private Role role;
+
     private String email;
     private String password;
 
@@ -37,7 +43,7 @@ public class User {
     @OneToOne(mappedBy = "user")
     private Patient patient;
 
-    public User (String firstName, String lastName,Role role,String email,String password)
+    public User (String firstName, String lastName, Role role, String email, String password)
     {
         this.firstName=firstName;
         this.lastName=lastName;
@@ -46,13 +52,4 @@ public class User {
         this.password=password;
     }
 
-    public User(Integer id, String firstName, String lastName, Role role, String email, String password) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.role = role;
-        this.email = email;
-        this.password = password;
-
-    }
 }

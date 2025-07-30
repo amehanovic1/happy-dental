@@ -14,7 +14,7 @@ import java.util.List;
 public class Doctor {
 
     @Id
-//    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String specialization;
@@ -31,7 +31,7 @@ public class Doctor {
     @OneToMany(mappedBy = "doctor")
     private List<Appointment> appointments;
 
-    public Doctor( String specialization,Integer userId) {
+    public Doctor(String specialization, Integer userId) {
         this.specialization = specialization;
         this.userId=userId;
     }

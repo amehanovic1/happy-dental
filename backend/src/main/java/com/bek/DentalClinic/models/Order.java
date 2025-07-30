@@ -14,12 +14,20 @@ import java.time.LocalDateTime;
 public class Order {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name="order_date_time")
     private LocalDateTime orderDateTime;
+
+    @Column(name="quantity_ordered")
     private Integer quantityOrdered;
+
+    @Column(name="is_order_canceled", nullable = false, columnDefinition = "boolean default false")
+    private boolean isOrderCanceled = false;
+
+    @Column(name="is_order_confirmed", nullable = false, columnDefinition = "boolean default false")
     private boolean isOrderConfirmed = false;
-    private boolean isOrderCanceled=false;
 
     @Column(name="product_id")
     private Integer productId;
@@ -37,7 +45,7 @@ public class Order {
     @JoinColumn(name="user_id",insertable=false,updatable=false)
     private User user;
 
-    public Order(LocalDateTime orderDateTime,Integer quantityOrdered,Integer productId,Integer userId)
+    public Order(LocalDateTime orderDateTime, Integer quantityOrdered, Integer productId, Integer userId)
     {
         this.orderDateTime=orderDateTime;
         this.productId=productId;

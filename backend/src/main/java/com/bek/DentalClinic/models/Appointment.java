@@ -14,8 +14,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class Appointment {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name="appointment_date_time")
     private LocalDateTime appointmentDateTime;
 
     @Column(name="doctor_id")
@@ -34,7 +36,7 @@ public class Appointment {
     @JoinColumn(name="patient_id",insertable = false,updatable = false)
     private Patient patient;
 
-    public Appointment(LocalDateTime appointmentDateTime,Integer patientId,Integer doctorId)
+    public Appointment(LocalDateTime appointmentDateTime, Integer doctorId, Integer patientId)
     {
         this.appointmentDateTime=appointmentDateTime;
         this.patientId=patientId;

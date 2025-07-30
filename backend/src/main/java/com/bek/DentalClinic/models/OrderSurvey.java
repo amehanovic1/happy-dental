@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class OrderSurvey {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "order_id")

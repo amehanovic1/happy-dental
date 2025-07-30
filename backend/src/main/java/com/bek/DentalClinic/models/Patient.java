@@ -16,17 +16,20 @@ import java.util.List;
 public class Patient {
 
     @Id
-//    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private LocalDate birthdate;
 
     private String city;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "gender", columnDefinition = "varchar(10)")
     private Gender gender;
 
     private String address;
 
+    @Column(name = "phone_number")
     private String phoneNumber;
 
     @Column(name = "user_id")

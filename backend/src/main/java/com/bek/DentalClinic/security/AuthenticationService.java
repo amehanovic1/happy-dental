@@ -29,7 +29,11 @@ public class AuthenticationService {
     {
         User saveUser=new User(user.getFirstName(), user.getLastName(), Role.PATIENT, user.getEmail(), passwordEncoder.encode(user.getPassword()));
         saveUser=userRepository.save(saveUser);
-        patientRepository.save(new Patient(null,null,null,null,null,saveUser.getId()));
+        //patientRepository.save(new Patient(null,null,null,null,null,saveUser.getId()));
+        Patient patient = new Patient();
+        patient.setUserId(saveUser.getId());
+        patientRepository.save(patient);
+
         return new UserVM(saveUser.getFirstName(),saveUser.getLastName(),saveUser.getRole(),saveUser.getEmail(),saveUser.getPassword());
     }
 
