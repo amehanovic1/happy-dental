@@ -32,10 +32,15 @@ Example `application.properties` settings:
 spring.datasource.url=jdbc:postgresql://localhost:5432/dentalclinic
 spring.datasource.username=your_username
 spring.datasource.password=your_password
+spring.datasource.driver-class-name=org.postgresql.Driver
 spring.jpa.hibernate.ddl-auto=create
 spring.jpa.defer-datasource-initialization=true
 spring.sql.init.mode=always
 spring.sql.init.data-locations=classpath:data.sql
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 ```
 
-You can access the full project documentation in PDF format here: [Project Documentation](docs/PPIS-Tim 4-Dental clinic.pdf)
+## Project Documentation
+
+The complete project documentation is available in PDF format. It provides detailed explanations of system design, implementation, and ITIL process integration.
+You can access the documentation here: [Project Documentation](PPIS_Tim%4_DentalClinic.pdf)
