@@ -24,6 +24,16 @@ Developed as part of the **Business Information Systems** course at the Faculty 
 - View all suppliers:
   - `GET: /orders/suppliers`
 
+---
+
+## Technologies Used
+
+- **Frontend:** React  
+- **Backend:** Spring Boot  
+- **Database:** PostgreSQL 
+
+---
+
 ## Database Configuration
 
 Example `application.properties` settings:
@@ -39,6 +49,7 @@ spring.sql.init.mode=always
 spring.sql.init.data-locations=classpath:data.sql
 spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 ```
+---
 
 ## Project Documentation
 
