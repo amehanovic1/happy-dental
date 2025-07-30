@@ -43,4 +43,4 @@ spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 ## Project Documentation
 
 The complete project documentation is available in PDF format. It provides detailed explanations of system design, implementation, and ITIL process integration.
-You can access the documentation here: [Project Documentation](PPIS_Tim%4_DentalClinic.pdf)
+You can access the documentation here: [Project Documentation](PPIS_Tim_4_DentalClinic.pdf)
